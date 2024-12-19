@@ -17,7 +17,7 @@ def main():
                 handle_ble_data(device, device.metadata)
             time.sleep(1)
     except KeyboardInterrupt:
-        print("\nStopping scanner...")
+        print("\nStopping...")
 
 if __name__ == "__main__":
     main()
