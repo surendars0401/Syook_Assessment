@@ -1,7 +1,7 @@
 acc_readings = []
 MOVEMENT_THRESHOLD = 0.5
 
-def parse_accelerometer_data(raw_data):
+def accelerometer_data(raw_data):
 
     try:
         if not raw_data.startswith("0201060303E1FF"):
@@ -44,7 +44,7 @@ def handle_ble_data(device, advertising_data):
                             advertising_data.manufacturer_data.get(
                                 next(iter(advertising_data.manufacturer_data)), b'')])
 
-        acc_data = parse_accelerometer_data(raw_data)
+        acc_data = accelerometer_data(raw_data)
         if acc_data:
             x, y, z = acc_data
             add_reading(x, y, z)
