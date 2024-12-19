@@ -20,12 +20,12 @@ def is_moving():
     if not acc_readings:
         return "Error"
 
-    total_magnitude = 0
+    t_magnitude = 0
     for x, y, z in acc_readings:
         magnitude = (x ** 2 + y ** 2 + z ** 2) ** 0.5
-        total_magnitude += magnitude
+        t_magnitude += magnitude
 
-    average_magnitude = total_magnitude / len(acc_readings)
+    average_magnitude = t_magnitude / len(acc_readings)
 
     if average_magnitude > MOVEMENT_THRESHOLD:
         return "Moving"
