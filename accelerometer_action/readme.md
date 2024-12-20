@@ -5,8 +5,8 @@ Follow these steps to set up and run the application:
 1. **Clone this repository**  
    ```bash
    git clone gh repo clone surendars0401/Syook_Assessment
-   ```
    cd syook_assessment
+   ```
 
 2. **Create a virtual environment**  
    ```bash
