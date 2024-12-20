@@ -1,1 +1,0 @@
-# Syook_Assessment
