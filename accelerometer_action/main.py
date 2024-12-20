@@ -1,23 +1,22 @@
-
+import asyncio
 from bleak import BleakScanner
-import time
-from accelerometer_action import handle_ble_data
+from accelerometer import process_data
 
-def main():
-
-
+async def scan_devices():
     print("Scanning...")
-
-    scanner = BleakScanner()
+    scanner = BleakScanner(detection_callback=process_data)
 
     try:
+        await scanner.start()
         while True:
-            devices = scanner.discover(timeout=1.0)
-            for device in devices:
-                handle_ble_data(device, device.metadata)
-            time.sleep(1)
+            await asyncio.sleep(1.0)
     except KeyboardInterrupt:
         print("\nStopping...")
+    finally:
+        await scanner.stop()
+
+def main():
+    asyncio.run(scan_devices())
 
 if __name__ == "__main__":
     main()
