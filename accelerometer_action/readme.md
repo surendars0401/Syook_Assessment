@@ -30,7 +30,7 @@ Follow these steps to set up and run the application:
 
 5. **Run the application**  
    ```bash
-   python <application_entry_point>.py
+   python main.py
    ```
 
-Replace `<repository_url>` with your repository's URL and `<application_entry_point>.py` with the name of your main Python file.
+
