@@ -1,6 +1,6 @@
 THRESHOLD = 0.5
 
-def parse_data(raw):
+def parse_data(Baw):
     try:
         if not raw.startswith("0201060303E1FF"):
             return None
